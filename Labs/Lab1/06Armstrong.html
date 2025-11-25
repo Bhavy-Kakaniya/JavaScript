@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>armstrong</title>
+</head>
+
+<body>
+    <script>
+        let num = prompt("Enter number to check armstrong or not: ");
+        let originalNum;
+        let remainder;
+        let result = 0;
+        let temp;
+        originalNum = num;
+        while (num != 0) {
+            remainder = num % 10;
+            num = Math.floor(num / 10);
+            temp = remainder * remainder * remainder;
+            result += temp;
+        }
+        if (result == originalNum) {
+            alert("armstrong")
+        }
+        else {
+            alert("not armstrong")
+        }
+    </script>
+</body>
+
+</html>

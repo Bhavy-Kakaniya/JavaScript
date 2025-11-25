@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibbonacci series</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt("Enter number of terms to find ");
+        let a = 0;
+        let b = 1;
+        let i = 0;
+        let c;
+        while (i < n) {
+            document.write(a);
+            c = a + b;
+            a = b;
+            b = c;
+            i++;
+        }
+    </script>
+</body>
+
+</html>

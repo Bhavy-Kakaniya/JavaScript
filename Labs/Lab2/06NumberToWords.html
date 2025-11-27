@@ -1,0 +1,85 @@
+<!-- Write an HTML page with JavaScript that takes a number from popup box in the range 0-
+999 and display it in words. If the number is out of range, it should show “out of range” and
+if it is not a number ,it should show “not a number” message in the result box. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number to words converter</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt("Enter a number between 0 and 999:");
+        if (n < 0 || n > 999 || isNaN(n)) {
+            alert("number is out of range, enter a number between 0 and 999.");
+        } else {
+            let result = "";
+            // Hundreds
+            let hundred = Math.floor(n / 100);
+            let remainder = n % 100;
+            if (hundred > 0) {
+                switch (hundred) {
+                    case 1: result += "one hundred "; break;
+                    case 2: result += "two hundred "; break;
+                    case 3: result += "three hundred "; break;
+                    case 4: result += "four hundred "; break;
+                    case 5: result += "five hundred "; break;
+                    case 6: result += "six hundred "; break;
+                    case 7: result += "seven hundred "; break;
+                    case 8: result += "eight hundred "; break;
+                    case 9: result += "nine hundred "; break;
+                }
+            }
+            // 10–19
+            if (remainder >= 10 && remainder <= 19) {
+                switch (remainder) {
+                    case 10: result += "ten"; break;
+                    case 11: result += "eleven"; break;
+                    case 12: result += "twelve"; break;
+                    case 13: result += "thirteen"; break;
+                    case 14: result += "fourteen"; break;
+                    case 15: result += "fifteen"; break;
+                    case 16: result += "sixteen"; break;
+                    case 17: result += "seventeen"; break;
+                    case 18: result += "eighteen"; break;
+                    case 19: result += "nineteen"; break;
+                }
+            } else {
+                let ten = Math.floor(remainder / 10);
+                let one = remainder % 10;
+                // Tens
+                switch (ten) {
+                    case 2: result += "twenty "; break;
+                    case 3: result += "thirty "; break;
+                    case 4: result += "forty "; break;
+                    case 5: result += "fifty "; break;
+                    case 6: result += "sixty "; break;
+                    case 7: result += "seventy "; break;
+                    case 8: result += "eighty "; break;
+                    case 9: result += "ninety "; break;
+                }
+                // Ones 
+                switch (one) {
+                    case 1: result += "one"; break;
+                    case 2: result += "two"; break;
+                    case 3: result += "three"; break;
+                    case 4: result += "four"; break;
+                    case 5: result += "five"; break;
+                    case 6: result += "six"; break;
+                    case 7: result += "seven"; break;
+                    case 8: result += "eight"; break;
+                    case 9: result += "nine"; break;
+                }
+            }
+            if (n === 0) {
+                result = "zero";
+            }
+            alert(result);
+        }
+    </script>
+</body>
+
+</html>

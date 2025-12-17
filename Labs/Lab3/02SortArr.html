@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let size = parseInt(prompt("size of array: "));
+        let arr = [];
+        for (let i = 0; i < size; i++) {
+            let num = (prompt("Enter number " + (i + 1) + ":"));
+            arr.push(num);
+        }
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        document.write("Sorted array: " + arr.join(", "))
+        // alert("Sorted array: " + arr.join(", "));
+    </script>
+</body>
+
+</html>
